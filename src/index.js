@@ -43,3 +43,43 @@ console.log('Proje açıldı!')
 
 
 /* Kodlar Buradan aşağıya */
+const navItems = document.querySelectorAll("header nav a");
+
+navItems.forEach((item,index) =>{
+  let i = index+1
+  item.textContent = siteContent["nav"]["nav-item-"+i];
+  item.setAttribute("class","italic");
+})
+
+const ctaText = document.querySelector(".cta-text");
+ctaText.querySelector("h1").textContent= siteContent.cta.h1;
+ctaText.querySelector("button").textContent= siteContent.cta.button;
+
+const topContent = document.querySelectorAll(".top-content .text-content");
+topContent[0].querySelector("h4").textContent=siteContent["ana-içerik"]["özellikler-h4"];
+topContent[0].querySelector("p").textContent=siteContent["ana-içerik"]["özellikler-içerik"];
+topContent[1].querySelector("h4").textContent=siteContent["ana-içerik"]["hakkımızda-h4"]; 
+topContent[1].querySelector("p").textContent=siteContent["ana-içerik"]["hakkımızda-içerik"];
+
+const bottomContent = document.querySelectorAll(".bottom-content h4");
+bottomContent[0].textContent=siteContent["ana-içerik"]["servisler-h4"];
+bottomContent[1].textContent=siteContent["ana-içerik"]["ürünler-h4"];
+bottomContent[2].textContent=siteContent["ana-içerik"]["vizyon-h4"];
+
+const bottomContentP = document.querySelectorAll(".bottom-content p");
+bottomContentP[0].textContent=siteContent["ana-içerik"]["servisler-içeriği"];
+bottomContentP[1].textContent=siteContent["ana-içerik"]["ürünler-içeriği"];
+bottomContentP[2].textContent=siteContent["ana-içerik"]["vizyon-içeriği"];
+
+document.getElementById("logo-img").src = siteContent.images["logo-img"];
+document.getElementById("cta-img").src = siteContent.images["cta-img"];
+document.getElementById("middle-img").src = siteContent.images["accent-img"];
+
+document.querySelector(".contact h4").textContent=siteContent.iletisim["iletişim-h4"];
+const contact = document.querySelectorAll(".contact p");
+contact[0].textContent=siteContent.iletisim.adres;
+contact[1].textContent=siteContent.iletisim.telefon;
+contact[2].textContent=siteContent.iletisim.email;
+
+document.querySelector("footer a").textContent=siteContent.footer.copyright;
+document.querySelector("footer a").classList.add("bold")
